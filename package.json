@@ -1,0 +1,19 @@
+{
+  "name": "webpack-zip-plugin",
+  "version": "0.0.1",
+  "description": "zip your dist after webpack builds",
+  "main": "index.js",
+  "scripts": {
+    "test": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yyhappynice/webpack-zip-plugin.git"
+  },
+  "author": "yuyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yyhappynice/webpack-zip-plugin/issues"
+  },
+  "homepage": "https://github.com/yyhappynice/webpack-zip-plugin#readme"
+}
