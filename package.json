@@ -4,16 +4,34 @@
   "description": "zip your dist after webpack builds",
   "main": "index.js",
   "scripts": {
-    "test": "webpack"
+    "test": "webpack",
+    "build": "rollup -c",
+    "lint": "eslint ./index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/yyhappynice/webpack-zip-plugin.git"
   },
+  "keywords": [
+    "webpack",
+    "zip",
+    "plugin"
+  ],
   "author": "yuyi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yyhappynice/webpack-zip-plugin/issues"
   },
-  "homepage": "https://github.com/yyhappynice/webpack-zip-plugin#readme"
+  "homepage": "https://github.com/yyhappynice/webpack-zip-plugin#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-latest": "^6.24.0",
+    "eslint": "^3.19.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "webpack": "^2.3.2"
+  }
 }
