@@ -1,6 +1,6 @@
 {
   "name": "webpack-zip-plugin",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "zip your dist after webpack builds",
   "main": "lib/index.js",
   "scripts": {

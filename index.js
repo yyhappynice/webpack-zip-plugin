@@ -3,14 +3,14 @@ const os = require('os')
 
 const defaultOptions = {
   initialFile: '',
-  endPath: '',
+  endPath: './',
   zipName: '',
   publishShell: '',
 }
 
 export default class WebpackZipPlugin {
   constructor(options) {
-    this.options = options || {}
+    this.options = options || defaultOptions
   }
 
   validate(options) {
@@ -21,7 +21,7 @@ export default class WebpackZipPlugin {
 
   handleZip() {
     console.log( `✈️  WebpackZipPlugin[${new Date()}]: ${this.options.initialFile}-->${this.options.endPath}/${this.options.zipName}` )
-    if(this.options.endPath) {
+    if(this.options.endPath && this.options.endPath != './') {
       this.spreadStdoutAndStdErr(exec(`rm -rf ${this.options.endPath} && mkdir ${this.options.endPath}`, this.pipe))
     }
     this.spreadStdoutAndStdErr(exec(`zip -r -j ${this.options.endPath}/${this.options.zipName} ${this.options.initialFile}`, this.pipe))

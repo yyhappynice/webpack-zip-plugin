@@ -53,8 +53,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new WebpackZipPlugin({
       initialFile: 'dist',
-      endPath: './weidian',
-      zipName: 'weidian.zip',
+      endPath: './',
+      zipName: 'zipName.zip',
       publishShell: ''
     })
   ]
