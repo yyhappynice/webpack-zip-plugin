@@ -11,7 +11,7 @@ This plugin zip your dist after webpack builds.
 Insert into your webpack.config.js:
 
 ```js
-const WebpackZipPlugin =require('webpack-zip-plugin')
+const WebpackZipPlugin = require('webpack-zip-plugin')
 
 module.exports = {
   ...
@@ -32,7 +32,7 @@ module.exports = {
 const path = require('path')
 const webpack = require('webpack')
 
-const WebpackZipPlugin =require('webpack-zip-plugin')
+const WebpackZipPlugin = require('webpack-zip-plugin')
 
 module.exports = {
   entry: './test/entry.js',
