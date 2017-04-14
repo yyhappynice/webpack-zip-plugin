@@ -63,11 +63,9 @@ module.exports = {
 
 ## API
 
-```js
-* `initialFile`: Need to pack the target file, excluding the file itself __Default: ''__
-* `endPath`: Packaged file directory __Default: ''__
-* `zipName`: Zip package name __Default: ''__
-```
+* `initialFile`: Need to pack the target file, excluding the file itself **Default: ''**
+* `endPath`: Packaged file directory **Default: ''**
+* `zipName`: Zip package name **Default: ''**
 
 ## LICENSE
 
