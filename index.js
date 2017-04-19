@@ -1,5 +1,6 @@
 const exec = require('child_process').exec
 const os = require('os')
+const yazl = require('yazl')
 
 const defaultOptions = {
   initialFile: '',
@@ -20,11 +21,9 @@ export default class WebpackZipPlugin {
   }
 
   handleZip() {
-    console.log( `✈️  WebpackZipPlugin[${new Date()}]: ${this.options.initialFile}-->${this.options.endPath}/${this.options.zipName}` )
-    if(this.options.endPath && this.options.endPath != './') {
-      this.spreadStdoutAndStdErr(exec(`rm -rf ${this.options.endPath} && mkdir ${this.options.endPath}`, this.pipe))
-    }
-    this.spreadStdoutAndStdErr(exec(`zip -r -j ${this.options.endPath}/${this.options.zipName} ${this.options.initialFile}`, this.pipe))
+    const zip = new yazl.ZipFile()
+    console.log( `✈️  WebpackZipPlugin[${new Date()}]: ${this.options.initialFile}/*-->${this.options.endPath}/${this.options.zipName}` )
+    this.spreadStdoutAndStdErr(exec(`mkdir -p ${this.options.endPath} && zip -r -j ${this.options.endPath}/${this.options.zipName} ${this.options.initialFile}`, this.pipe))
   }
 
   pipe(error, stdout, stderr) {
