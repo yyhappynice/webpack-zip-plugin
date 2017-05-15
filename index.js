@@ -23,7 +23,7 @@ export default class WebpackZipPlugin {
   handleZip() {
     const zip = new yazl.ZipFile()
     console.log( `✈️  WebpackZipPlugin[${new Date()}]: ${this.options.initialFile}/*-->${this.options.endPath}/${this.options.zipName}` )
-    this.spreadStdoutAndStdErr(exec(`mkdir -p ${this.options.endPath} && zip -r -j ${this.options.endPath}/${this.options.zipName} ${this.options.initialFile}`, this.pipe))
+    this.spreadStdoutAndStdErr(exec(`mkdir -p ${this.options.endPath} && zip -r ${this.options.endPath}/${this.options.zipName} ${this.options.initialFile}`, this.pipe))
   }
 
   pipe(error, stdout, stderr) {
