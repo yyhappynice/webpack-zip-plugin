@@ -24,7 +24,7 @@ module.exports = {
       initialFile: 'dist',
       endPath: './weidian',
       zipName: 'weidian.zip',
-      publishShell: ''
+      frontShell: 'ls'
     })
   ]
 }

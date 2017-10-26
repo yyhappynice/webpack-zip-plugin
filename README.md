@@ -17,9 +17,11 @@ module.exports = {
   ...
   plugins: [
     new WebpackZipPlugin({
+      frontShell: 'ls'
       initialFile: './dist',
       endPath: './buildPath',
-      zipName: '[name].zip'
+      zipName: '[name].zip',
+      behindShell: 'scp ***'
     })
   ]
 }
@@ -52,10 +54,11 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new WebpackZipPlugin({
+      frontShell: 'ls && pwd',
       initialFile: 'dist',
       endPath: './',
       zipName: 'zipName.zip',
-      publishShell: ''
+      behindShell: 'scp dist.zip www@*.*.*.*:/root/'
     })
   ]
 }
@@ -66,6 +69,8 @@ module.exports = {
 * `initialFile`: Need to pack the target file, excluding the file itself **Default: ''**
 * `endPath`: Packaged file directory **Default: ''**
 * `zipName`: Zip package name **Default: ''**
+* `frontShell`: Zip front commands **Default: ''**
+* `behindShell`: Zip behind commands **Default: ''**
 
 ## LICENSE
 
