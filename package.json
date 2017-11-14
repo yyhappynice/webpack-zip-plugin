@@ -1,6 +1,6 @@
 {
   "name": "webpack-zip-plugin",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "zip your dist after webpack builds",
   "main": "lib/index.js",
   "scripts": {
@@ -35,6 +35,6 @@
     "webpack": "^2.3.2"
   },
   "dependencies": {
-    "yazl": "^2.4.2"
+    "node-symbols": "0.0.4"
   }
 }

@@ -1,6 +1,6 @@
 const exec = require('child_process').exec
+const symbols = require('node-symbols')
 const os = require('os')
-const yazl = require('yazl')
 
 const defaultOptions = {
   initialFile: '',
@@ -22,9 +22,8 @@ export default class WebpackZipPlugin {
   }
 
   handleZip() {
-    const zip = new yazl.ZipFile()
     const behindShell =  this.options.behindShell ? (`&& ${this.options.behindShell}`) : ''
-    console.log( `✈️  WebpackZipPlugin[${new Date()}]: ${this.options.initialFile}/*-->${this.options.endPath}/${this.options.zipName}` )
+    console.log( ` ${symbols('tick', 'green')} WebpackZipPlugin[${new Date()}]: ${this.options.initialFile}/*-->${this.options.endPath}/${this.options.zipName}` )
     this.options.frontShell && this.spreadStdoutAndStdErr(exec(`${this.options.frontShell}`, this.pipe))
     this.spreadStdoutAndStdErr(exec(`mkdir -p ${this.options.endPath} && zip -r ${this.options.endPath}/${this.options.zipName} ${this.options.initialFile} ${behindShell}`, this.pipe))
   }
